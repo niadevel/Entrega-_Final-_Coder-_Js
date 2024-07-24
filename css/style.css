@@ -1,0 +1,76 @@
+body h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+body h2 {
+    font-size: 50px;
+    text-align: center;
+    color: dodgerblue;
+}
+
+body h3 {
+    font-size: 30px;
+    text-align: center;
+    color: #fc4300de;
+}
+
+body h4 {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+input[type=text] {
+    width: 75%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 75%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=number] {
+    width: 30%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+select {
+    width: 25%;
+    padding: 10px 10px;
+}
+
+.boton {
+    cursor: pointer;
+    
+}
+
+
+.search-container {
+    padding: 10px 10px 10px 0px;
+    cursor: pointer;
+}
+
+
+
+.no-resultados {
+    font-size: 20px;
+    background-color: #f4c4b3;
+    text-align: left;
+    display: none;
+}
+
+#reporteCompleto {
+    list-style-type: circle;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    line-height: normal;
+}

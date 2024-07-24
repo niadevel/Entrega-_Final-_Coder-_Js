@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Js-->
+    <script defer src="./js/main.js"></script>
+
+    <title>Simulador prestamos hipotecarios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--Toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <!-- Quisiera realizar un simulador de prestamos hipotecarios, donde el cliente pueda consultar en cuánto le quedarían las cuotas a pagar, los intereses y evaluación de si cumple los requisitos para acceder al crédito.-->
+
+    <h1>Bienvenido</h1>
+    <h2>Simulá tu préstamo online</h2>
+    <!--<button> Haz click aquí</button> -->
+
+    <section>
+        <h3> Calculá tu préstamo aquí 👇🏼</h3>
+
+        <form id="miReporte" class="container">
+            <fieldset>
+                <legend> Ingresa los siguientes datos: </legend>
+
+                <label> ¿Sos mayor de edad?</label>
+                
+            
+                <label for="rad1">Si
+                <input
+                type="radio"
+                name="edad"
+                id="rad1"
+                value="true" required>
+                </label>
+
+                <label for="rad2">No
+                <input
+                type="radio"
+                name="edad"
+                id="rad2"
+                value="false" required>
+                </label>
+
+                <br>
+                
+                <label>Nombre y Apellido:
+                    <input 
+                        type="text" 
+                        name="nombre" 
+                        id="nombre"
+                        placeholder="Leo Messi"
+                        required>
+                    </label>
+
+                    <br>
+
+                <label>Email:
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email"
+                        placeholder="leomessi@gmail.com">
+                    </label>
+
+                    <br>
+
+                <label>DNI:
+                    <input
+                        type="number"
+                        name="dni"
+                        id="dni"
+                        placeholder="12.456.789">
+                </label>
+
+                <br>
+
+                <label for="depto">¿Qué tipo de departamento querés?
+                    <select name="depto" id="depto" required> 
+                        <option value="1 Ambiente">Monoambiente</option>
+                        <option value="2 Ambientes">2 Ambientes</option>
+                        <option value="3 Ambientes">3 Ambientes</option>
+                    </select>
+                </label>
+                
+                <br>
+
+                <label for="ingresos">Ingresos mensuales:
+                    <input
+                        type="number"
+                        name="ingresos"
+                        id="ingresos"
+                        placeholder="150.000"
+                        required>
+                </label>
+
+                <br>
+
+                <label for="prestamo">Monto a prestar:
+                    <input
+                        type="number"
+                        name="prestamo"
+                        id="prestamo"
+                        placeholder="1.000.000"
+                        required>
+                </label>
+
+                <br>
+
+                <label for="cuotas">Seleccione cantidad de cuotas:
+                    <select name="cuotas" id="cuotas" required>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="36">36</option>
+                    </select>
+                </label>
+
+            </fieldset>
+
+            <sections>
+            <input  type="submit" value="Generar mi reporte" id="generar">
+            <input  type="button" value="Guardar mi reporte" id="guardar">
+            <input  type="button" value="Ver todos los reportes" id="todos">
+            </section>
+        </form>
+    </section>
+
+<!--Barra búsqueda por nombre-->
+
+<div class="search-container">
+    <input type="text" id="buscarReporte" placeholder="Buscar por nombre..."/>
+    <ul id="listaResultado" class="lista-resultado"></ul>
+    <p id="noresultados" class="no-resultados">El nombre ingresado no  posee reportes</p>
+</div>
+
+    <div id="respuestas">
+        <div id="reporte"></div>
+    </div>
+
+
+<section id="reporteCompleto">
+    <h4>Mi Reporte</h4>
+    <ul>
+    <li> <p>Nombre y Apellido:</p> <p id="reporteNombre"></p></li>
+    <li> <p>Email:</p> <p id="reporteEmail"></p></li>
+    <li> <p>DNI:</p> <p id="reporteDni"></p> </li>
+    <li> <p>Departamento:</p> <p id="reporteDepto"></p> </li>
+    <li> <p>Monto:</p> <p id="reporteMonto"></p> </li>
+    <li> <p>Cuotas:</p> <p id="reporteCuotas"></p> </li>
+    </ul>
+</section>
+
+<div id="reporteUsingCreate"></div>
+
+
+<!--Toastify-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!--SweeAlert-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/librerias.js"></script>
+
+</body>
+</html>
