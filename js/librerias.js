@@ -33,4 +33,5 @@ Toastify({
       `
     }
   });
+  document.getElementById("reporteCompleto").style.display = "none";
 }

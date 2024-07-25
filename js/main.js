@@ -1,6 +1,11 @@
-//clase reportes, objetos
+//const
 const clientes = []
+const buscarReporte = document.getElementById("buscarReporte")
+const listaResultado = document.getElementById("listaResultado")
+const noResultados = document.getElementById("noresultados")
+
 cargarLocalStorage()
+//objeto
 
 class Cliente {
     static id = 0
@@ -20,9 +25,13 @@ class Cliente {
     }
 }
 
+//funciones
 
 ingresarDatos = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+
+    document.getElementById("reporteUsingCreate").style.display = "none";
+
     let ingresarNombre = document.getElementById("nombre").value;
     let ingresarEmail = document.getElementById("email").value;
     let ingresarDni = document.getElementById("dni").value;
@@ -53,35 +62,7 @@ function mostrarReporte(Cliente) {
         document.getElementById("reporteCuotas").innerHTML = Cliente.montoCuotas.toFixed(2);
 }
 
-let miReporte = document.getElementById("miReporte")
-miReporte.addEventListener("submit", ingresarDatos)
-
-document.getElementById("reporteCompleto").style.display = "none"
-
-
-
 //Ver todos los reportes
-
-
-// function crearReportes(Cliente) {
-
-//     let nuevoDiv = document.createElement("div")
-//     let valueNombre = document.createElement("p")
-//     let labelNombre = document.createElement("p")
-
-//     let labelParNombre = document.createTextNode("Nombre Cliente")
-//     let contentParNombre = document.createTextNode(Cliente.nombre)
-
-//     labelNombre.appendChild(labelParNombre)
-//     valueNombre.appendChild(contentParNombre)
-
-//     nuevoDiv.appendChild(labelNombre)
-//     nuevoDiv.appendChild(valueNombre)
-
-//     document.getElementById("reporteUsingCreate").appendChild(nuevoDiv)
-
-
-// }
 
 function crearReportes(Cliente) {
     //nodos padres
@@ -167,6 +148,7 @@ function crearReportes(Cliente) {
         nuevoDiv.appendChild(valueCuotas)
 
         document.getElementById("reporteUsingCreate").appendChild(nuevoDiv)
+        document.getElementById("reporteUsingCreate").style.display = "block";
     }
 
 
@@ -180,15 +162,9 @@ function verTodosLosReportes(){
     });
 }
 
-let verReportes = document.getElementById("todos")
-verReportes.addEventListener("click", verTodosLosReportes)
 
 
 //filtrar 1 reporte
-
-const buscarReporte = document.getElementById("buscarReporte")
-const listaResultado = document.getElementById("listaResultado")
-const noResultados = document.getElementById("noresultados")
 
 const usuarioBusqueda = () => {
     const busquedaNombre = buscarReporte.value.toLowerCase(); //var busquedaNombre captura lo que escribe el usuario
@@ -214,18 +190,13 @@ const usuarioBusqueda = () => {
     }
 }
 
-buscarReporte.addEventListener("input", usuarioBusqueda)
-
 //Guardar reportes Local Storage
-
-guardar.addEventListener("click", reporteGuardadoSwal)
 
 function guardarLocalStorage(clientes) {
 
 const guardarReporte = JSON.stringify(clientes)
 localStorage.setItem("guardarReporte", guardarReporte)
 }
-
 
 
 function obtenerLocalStorage() {
@@ -245,3 +216,27 @@ function cargarLocalStorage() {
             }) 
     } 
 }
+
+//vaciar formulario
+function vaciarFormulario() {
+  document.getElementById("reporteCompleto").style.display = "none"
+  document.getElementById("reporteUsingCreate").style.display = "none"
+}
+
+//let, events, dom
+let miReporte = document.getElementById("miReporte")
+miReporte.addEventListener("submit", ingresarDatos)
+
+document.getElementById("reporteCompleto").style.display = "none"
+
+let verReportes = document.getElementById("todos")
+verReportes.addEventListener("click", verTodosLosReportes)
+
+buscarReporte.addEventListener("input", usuarioBusqueda)
+
+guardar.addEventListener("click", reporteGuardadoSwal)
+
+let borrarFormulario = document.getElementById("vaciar")
+borrarFormulario.addEventListener("click", vaciarFormulario)
+
+
