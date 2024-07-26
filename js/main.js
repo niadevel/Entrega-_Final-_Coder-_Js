@@ -4,6 +4,7 @@ const clientes = []
 const buscarReporte = document.getElementById("buscarReporte")
 const listaResultado = document.getElementById("listaResultado")
 const noResultados = document.getElementById("noresultados")
+const noReportes = document.getElementById("noReportes")
 
 cargarLocalStorage()
 
@@ -194,13 +195,14 @@ function crearReportes(Cliente) {
 
 
 function verTodosLosReportes(){
+    document.getElementById("noReportes").style.display = "none"
     document.getElementById("reporteCompleto").style.display = "none";
    
     let clientesLocal = obtenerLocalStorage()
     if (clientesLocal != null){
         crearReportesCartas(clientesLocal)
     }else{
-        //TODO nnotificar que nno hay reportes
+        noReportes.style.display = "block"
     }
 }
 
@@ -260,6 +262,10 @@ function cargarLocalStorage() {
 function vaciarFormulario() {
   document.getElementById("reporteCompleto").style.display = "none"
   document.getElementById("reporteUsingCreate").style.display = "none"
+  document.getElementById("noReportes").style.display = "none"
+  document.getElementById("datosBanco").style.display = "none"
+  document.getElementById("noresultados").style.display = "none"
+  
 }
 
 let DataBankToday

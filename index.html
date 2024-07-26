@@ -39,6 +39,7 @@
                         <button class="btn btn-info" id="Inglaterra">United Kingdom</button>
                     </sections>
                 </div>
+
                 <div id="datosBanco" class="card mt-2" style="width: 30rem;">
                     <div id="paisSeleccioado" class="card-header">
                       
@@ -186,11 +187,15 @@
 
 <!--Barra búsqueda por nombre-->
 
-<div class="search-container">
-    <input type="text" id="buscarReporte" placeholder="Buscar por nombre..."/>
-    <ul id="listaResultado" class="lista-resultado"></ul>
-    <p id="noresultados" class="no-resultados">El nombre ingresado no  posee reportes</p>
+<div class="row">
+    <div class="d-flex mt-2" role="search" >
+        <input type="text" id="buscarReporte" placeholder="Buscar por nombre..." class="form-control me-2 col-sm-12"/>
+
+    </div>
 </div>
+
+<ul id="listaResultado" class="lista-resultado"></ul>
+<p id="noresultados" class="no-resultados mt-2 p-3 rounded-1">El nombre ingresado no  posee reportes</p>
 
     <div id="respuestas">
         <div id="reporte"></div>
@@ -215,8 +220,9 @@
 
 </section>
 
-<div id="reporteUsingCreate"></div>
 
+<div id="reporteUsingCreate"></div>
+<p id="noReportes" class="no-reportes mt-2 p-3 rounded-1">No hay reportes creados aún</p>
 
 <!--Toastify-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

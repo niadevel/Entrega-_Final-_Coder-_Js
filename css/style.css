@@ -41,7 +41,6 @@ select {
 
 
 .search-container {
-    padding: 10px 10px 10px 0px;
     cursor: pointer;
 }
 
@@ -59,4 +58,11 @@ select {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     line-height: normal;
+}
+
+.no-reportes {
+    font-size: 20px;
+    background-color: #f4c4b3;
+    text-align: left;
+    display: none;
 }
