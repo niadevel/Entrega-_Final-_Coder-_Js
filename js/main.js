@@ -84,7 +84,7 @@ function crearReportesCartas(clientes){
         const div = document.createElement('div');
         div.classList.add('col-lg-3','col-md-4','mb-4', 'tarjeta')
           div.innerHTML = `
-            <div class="card" style="width: 30rem;">
+            <div class="card" style="width: 30rem;" id="reporte-${element.id}">
                 <div class="card-header">
                     Id Reporte : ${element.id}
                 </div>
@@ -95,6 +95,7 @@ function crearReportesCartas(clientes){
                 <li class="list-group-item">Departamento: ${element.depto}</li>
                 <li class="list-group-item">Monto: ${element.montoPrestamo}</li>
                 <li class="list-group-item">Cuotas: ${element.montoCuotas}</li>
+                <input class="btn btn-danger borrarReporte" type="button" value="Borrar Reporte" onClick="borrarReporte(${element.id})">
                 </ul>
             </div>
         `
@@ -106,92 +107,101 @@ function crearReportesCartas(clientes){
 
 //Ver todos los reportes
 
-function crearReportes(Cliente) {
-    //nodos padres
-        let nuevoDiv = document.createElement("div")
+// function crearReportes(Cliente) {
+//     //nodos padres
+//         let nuevoDiv = document.createElement("div")
         
-        let labelNombre = document.createElement("p")
-        let valueNombre = document.createElement("p")
+//         let labelNombre = document.createElement("p")
+//         let valueNombre = document.createElement("p")
 
-        let labelEmail = document.createElement("p")
-        let valueEmail = document.createElement("p")
+//         let labelEmail = document.createElement("p")
+//         let valueEmail = document.createElement("p")
 
-        let labelDni = document.createElement("p")
-        let valueDni = document.createElement("p")
+//         let labelDni = document.createElement("p")
+//         let valueDni = document.createElement("p")
 
-        let labelDepto = document.createElement("p")
-        let valueDepto = document.createElement("p")
+//         let labelDepto = document.createElement("p")
+//         let valueDepto = document.createElement("p")
 
-        let labelPrestamo = document.createElement("p")
-        let valuePrestamo = document.createElement("p")
+//         let labelPrestamo = document.createElement("p")
+//         let valuePrestamo = document.createElement("p")
 
-        let labelCuotas = document.createElement("p")
-        let valueCuotas = document.createElement("p")
+//         let labelCuotas = document.createElement("p")
+//         let valueCuotas = document.createElement("p")
 
-        //nodoTexto
+//         //nodoTexto
     
-        let labelParNombre = document.createTextNode("Nombre:")
-        let contentParNombre = document.createTextNode(Cliente.nombre)
+//         let labelParNombre = document.createTextNode("Nombre:")
+//         let contentParNombre = document.createTextNode(Cliente.nombre)
         
-        let labelParEmail = document.createTextNode("Email:")
-        let contentParEmail = document.createTextNode(Cliente.email)
+//         let labelParEmail = document.createTextNode("Email:")
+//         let contentParEmail = document.createTextNode(Cliente.email)
 
-        let labelParDni = document.createTextNode("DNI:")
-        let contentParDni = document.createTextNode(Cliente.dni)
+//         let labelParDni = document.createTextNode("DNI:")
+//         let contentParDni = document.createTextNode(Cliente.dni)
 
-        let labelParDepto = document.createTextNode("Depto:")
-        let contentParDepto = document.createTextNode(Cliente.depto)
+//         let labelParDepto = document.createTextNode("Depto:")
+//         let contentParDepto = document.createTextNode(Cliente.depto)
 
-        let labelParPrestamo = document.createTextNode("Monto Préstamo:")
-        let contentParPrestamo = document.createTextNode(Cliente.montoPrestamo)
+//         let labelParPrestamo = document.createTextNode("Monto Préstamo:")
+//         let contentParPrestamo = document.createTextNode(Cliente.montoPrestamo)
 
-        let labelParCuotas = document.createTextNode("Cuotas:")
-        let contentParCuotas = document.createTextNode(Cliente.montoCuotas.toFixed(2))
-
-
-    //crear nodos hijos
-        labelNombre.appendChild(labelParNombre)
-        valueNombre.appendChild(contentParNombre)
-
-        labelEmail.appendChild(labelParEmail)
-        valueEmail.appendChild(contentParEmail)
-
-        labelDni.appendChild(labelParDni)
-        valueDni.appendChild(contentParDni)
-
-        labelDepto.appendChild(labelParDepto)
-        valueDepto.appendChild(contentParDepto)
-
-        labelPrestamo.appendChild(labelParPrestamo)
-        valuePrestamo.appendChild(contentParPrestamo)
-
-        labelCuotas.appendChild(labelParCuotas)
-        valueCuotas.appendChild(contentParCuotas)
+//         let labelParCuotas = document.createTextNode("Cuotas:")
+//         let contentParCuotas = document.createTextNode(Cliente.montoCuotas.toFixed(2))
 
 
-    //agregarlos al Padre
+//     //crear nodos hijos
+//         labelNombre.appendChild(labelParNombre)
+//         valueNombre.appendChild(contentParNombre)
+
+//         labelEmail.appendChild(labelParEmail)
+//         valueEmail.appendChild(contentParEmail)
+
+//         labelDni.appendChild(labelParDni)
+//         valueDni.appendChild(contentParDni)
+
+//         labelDepto.appendChild(labelParDepto)
+//         valueDepto.appendChild(contentParDepto)
+
+//         labelPrestamo.appendChild(labelParPrestamo)
+//         valuePrestamo.appendChild(contentParPrestamo)
+
+//         labelCuotas.appendChild(labelParCuotas)
+//         valueCuotas.appendChild(contentParCuotas)
+
+
+//     //agregarlos al Padre
     
-        nuevoDiv.appendChild(labelNombre)
-        nuevoDiv.appendChild(valueNombre)
+//         nuevoDiv.appendChild(labelNombre)
+//         nuevoDiv.appendChild(valueNombre)
 
-        nuevoDiv.appendChild(labelEmail)
-        nuevoDiv.appendChild(valueEmail)
+//         nuevoDiv.appendChild(labelEmail)
+//         nuevoDiv.appendChild(valueEmail)
 
-        nuevoDiv.appendChild(labelDni)
-        nuevoDiv.appendChild(valueDni)
+//         nuevoDiv.appendChild(labelDni)
+//         nuevoDiv.appendChild(valueDni)
 
-        nuevoDiv.appendChild(labelDepto)
-        nuevoDiv.appendChild(valueDepto)
+//         nuevoDiv.appendChild(labelDepto)
+//         nuevoDiv.appendChild(valueDepto)
 
-        nuevoDiv.appendChild(labelPrestamo)
-        nuevoDiv.appendChild(valuePrestamo)
+//         nuevoDiv.appendChild(labelPrestamo)
+//         nuevoDiv.appendChild(valuePrestamo)
 
-        nuevoDiv.appendChild(labelCuotas)
-        nuevoDiv.appendChild(valueCuotas)
+//         nuevoDiv.appendChild(labelCuotas)
+//         nuevoDiv.appendChild(valueCuotas)
 
-        document.getElementById("reporteUsingCreate").appendChild(nuevoDiv)
-        document.getElementById("reporteUsingCreate").style.display = "block";
-    }
+//         document.getElementById("reporteUsingCreate").appendChild(nuevoDiv)
+//         document.getElementById("reporteUsingCreate").style.display = "block";
+//     }
+
+function borrarReporte(id){
+    const clientePorId = clientes.filter((cliente) => cliente.id == id);
+    index= clientes.indexOf(clientePorId[0])
+    clientes.splice(index,1)
+    guardarLocalStorage(clientes)
+    document.getElementById("reporte-"+id).innerHTML=""
+}
+
 
 
 function verTodosLosReportes(){
@@ -218,10 +228,30 @@ const usuarioBusqueda = () => {
     if(filtradoNombres.length === 0){
         noResultados.style.display = "block"
     } else {
-        filtradoNombres.forEach((nombres) => {
-            const li = document.createElement("li")
-            li.textContent = nombres.nombre
-            listaResultado.appendChild(li)
+        filtradoNombres.forEach((element) => {
+
+            const div = document.createElement('div');
+            div.classList.add('col-lg-3','col-md-4','mb-4', 'tarjeta')
+              div.innerHTML = `
+                <div class="card" style="width: 30rem;" id="reporte-${element.id}">
+                    <div class="card-header">
+                        Id Reporte : ${element.id}
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nombre y Apellido: ${element.nombre}</li>
+                    <li class="list-group-item">Email: ${element.email}</li>
+                    <li class="list-group-item">DNI: ${element.dni}</li>
+                    <li class="list-group-item">Departamento: ${element.depto}</li>
+                    <li class="list-group-item">Monto: ${element.montoPrestamo}</li>
+                    <li class="list-group-item">Cuotas: ${element.montoCuotas}</li>
+                    <input class="btn btn-danger borrarReporte" type="button" value="Borrar Reporte" onClick="borrarReporte(${element.id})">
+                    </ul>
+                </div>
+            `
+            document.getElementById("reporteUsingCreate").appendChild(div)
+            listaResultado.appendChild(div)
+
+
         })
         noResultados.style.display = "none"
     }
@@ -234,7 +264,6 @@ const usuarioBusqueda = () => {
 //Guardar reportes Local Storage
 
 function guardarLocalStorage(clientes) {
-
 const guardarReporte = JSON.stringify(clientes)
 localStorage.setItem("guardarReporte", guardarReporte)
 }
@@ -335,3 +364,5 @@ vaciarLocal.addEventListener("click", vaciarLocalStorage)
 let banco = document.getElementById("banco")
 let tasa = document.getElementById("tasa")
 let updated = document.getElementById("updated")
+
+
