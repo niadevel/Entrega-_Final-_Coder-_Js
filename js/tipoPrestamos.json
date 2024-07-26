@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "nombre": "Estefania Atencio",
+        "email": "danielromero1040@gmail.com",
+        "dni": "95870506",
+        "depto": "1 Ambiente",
+        "ingresos": "090909",
+        "montoPrestamo": "09090090",
+        "nroCuotas": "12",
+        "montoCuotas": 757507.5
+    },
+    {
+        "id": 1,
+        "nombre": "Estefania Atencio",
+        "email": "danielromero1040@gmail.com",
+        "dni": "95870506",
+        "depto": "1 Ambiente",
+        "ingresos": "090909",
+        "montoPrestamo": "09090090",
+        "nroCuotas": "12",
+        "montoCuotas": 757507.5
+    }
+]

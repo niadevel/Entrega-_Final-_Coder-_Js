@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Js-->
+
     <script defer src="./js/main.js"></script>
 
     <title>Simulador prestamos hipotecarios</title>
@@ -12,121 +13,173 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-</head>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+</head>
 <body>
-    <!-- Quisiera realizar un simulador de prestamos hipotecarios, donde el cliente pueda consultar en cuánto le quedarían las cuotas a pagar, los intereses y evaluación de si cumple los requisitos para acceder al crédito.-->
+    <!-- Quisiera realizar un simulador de prestamos hipotecarios, donde el cliente pueda consultar según su país, en cuánto le quedarían las cuotas a pagar, guarde su consulta y pueda ver todas las consultas que ha realizado.-->
 
     <h1>Bienvenido</h1>
-    <h2>Simulá tu préstamo online</h2>
-    <!--<button> Haz click aquí</button> -->
 
-    <section>
+    <h2>Simulá tu préstamo online</h2
+
+    <section class="mx-auto">
         <h3> Calculá tu préstamo aquí 👇🏼</h3>
-
-        <form id="miReporte" class="container">
+    
+        
+        <form id="miReporte" class="mx-auto">
             <fieldset>
                 <legend> Ingresa los siguientes datos: </legend>
-
-                <label> ¿Sos mayor de edad?</label>
                 
-            
-                <label for="rad1">Si
-                <input
-                type="radio"
-                name="edad"
-                id="rad1"
-                value="true" required>
-                </label>
+                <div class="row">
+                    <p class="form-label col-sm-4 col-form-label">Selecciona Pais</p>
+                    <sections class="col-sm-8">
+                        <button class="btn btn-info" id="Australia">Australia</button>
+                        <button class="btn btn-info" id="Inglaterra">United Kingdom</button>
+                    </sections>
+                </div>
+                <div id="datosBanco" class="card mt-2" style="width: 30rem;">
+                    <div id="paisSeleccioado" class="card-header">
+                      
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Banco: <span id="banco"> </span></li>
+                      <li class="list-group-item">Tasa: <span id="tasa"></span></li>
+                      <li class="list-group-item">Fecha Actualizacion: <span id="updated"></span> </li>
+                    </ul>
+                </div>
+                
+            <div class="row">
+                
+                <label class="form-label col-sm-4 col-form-label"> ¿Sos mayor de edad?</label>
+                <div class="col-sm-8 mt-2">
+                    <div class="form-check form-check-inline">
+                    <label for="rad1" class="form-check-label">Si
+                    <input
+                    type="radio"
+                    name="edad"
+                    id="rad1"
+                    class="form-check-input"
+                    value="true" required>
+                    </label>
+                    </div>
+    
+                    <div class="form-check form-check-inline">
+                    <label for="rad2" class="form-check-label">No
+                    <input
+                    type="radio"
+                    name="edad"
+                    id="rad2"
+                    class="form-check-input"
+                    value="false" required>
+                    </label>
+                    </div>
+                </div>
 
-                <label for="rad2">No
-                <input
-                type="radio"
-                name="edad"
-                id="rad2"
-                value="false" required>
-                </label>
+            </div>
 
                 <br>
                 
-                <label>Nombre y Apellido:
+                <div class = "row">
+                <label class="form-label col-sm-4 col-form-label">Nombre y Apellido:</label>
+                <div class="col-sm-8">
                     <input 
                         type="text" 
                         name="nombre" 
                         id="nombre"
+                        class="form-control"
                         placeholder="Leo Messi"
                         required>
-                    </label>
+                </div>
+                    
+                </div>
 
                     <br>
-
-                <label>Email:
+                <div class = "row">
+                <label class="form-label col-sm-4 col-form-label">Email: </label>
+                    <div class="col-sm-8">
                     <input 
                         type="email" 
                         name="email" 
                         id="email"
+                        class="form-control"
                         placeholder="leomessi@gmail.com">
-                    </label>
+                   </div>
+                 </div>
+                    
+                <div class="row">
+                    <label class="form-label col-sm-4 col-form-label">DNI:</label>
+                        <div class="col-sm-8">
+                            <input
+                                type="number"
+                                name="dni"
+                                id="dni"
+                                class="form-control"
+                                placeholder="12.456.789">
+                        </div>
+                </div>
 
-                    <br>
-
-                <label>DNI:
-                    <input
-                        type="number"
-                        name="dni"
-                        id="dni"
-                        placeholder="12.456.789">
-                </label>
-
-                <br>
-
-                <label for="depto">¿Qué tipo de departamento querés?
-                    <select name="depto" id="depto" required> 
-                        <option value="1 Ambiente">Monoambiente</option>
-                        <option value="2 Ambientes">2 Ambientes</option>
-                        <option value="3 Ambientes">3 Ambientes</option>
-                    </select>
-                </label>
+                <div class="row">
+                    <label for="depto"  class="form-label col-sm-4 col-form-label">¿Qué tipo de departamento querés? </label>
+                    <div class="col-sm-8">
+                        <select name="depto" id="depto" class="form-select"required> 
+                            <option value="1 Ambiente">Monoambiente</option>
+                            <option value="2 Ambientes">2 Ambientes</option>
+                            <option value="3 Ambientes">3 Ambientes</option>
+                        </select>
+                    </div>
+                </div>
                 
-                <br>
+             
 
-                <label for="ingresos">Ingresos mensuales:
-                    <input
-                        type="number"
-                        name="ingresos"
-                        id="ingresos"
-                        placeholder="150.000"
-                        required>
-                </label>
+                <div class="row">
+                    <label for="ingresos" class="form-label col-sm-4 col-form-label">Ingresos mensuales: </label>
+                    <div class="col-sm-8">
+                        <input
+                            type="number"
+                            name="ingresos"
+                            id="ingresos"
+                            class="form-control"
+                            placeholder="150.000"
+                            required>
+                    </div>
+                    
+                </div>
 
-                <br>
+                <div class="row">
+                    <label for="prestamo" class="form-label col-sm-4 col-form-label">Monto a prestar: </label>
+                    <div class="col-sm-8">
+                        <input
+                            type="number"
+                            name="prestamo"
+                            id="prestamo"
+                            class="form-control"
+                            placeholder="1.000.000"
+                            required>
+                    </div>
+                </div>
 
-                <label for="prestamo">Monto a prestar:
-                    <input
-                        type="number"
-                        name="prestamo"
-                        id="prestamo"
-                        placeholder="1.000.000"
-                        required>
-                </label>
-
-                <br>
-
-                <label for="cuotas">Seleccione cantidad de cuotas:
-                    <select name="cuotas" id="cuotas" required>
-                        <option value="12">12</option>
-                        <option value="24">24</option>
-                        <option value="36">36</option>
-                    </select>
-                </label>
+                <div class="row">
+                    <label for="cuotas" class="form-label col-sm-4 col-form-label">Seleccione cantidad de cuotas:  </label>
+                    <div class="col-sm-8">
+                        <select class="form-select" name="cuotas" id="cuotas" required>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                   
+                </div>
 
             </fieldset>
-
+<br>
             <sections>
-            <input  type="submit" value="Generar mi reporte" id="generar">
-            <input  type="button" value="Guardar mi reporte" id="guardar">
-            <input  type="button" value="Ver todos los reportes" id="todos">
-            <input  type="reset" value="Borrar todo" id="vaciar">
+            <input  class="btn btn-primary" type="submit" value="Generar mi reporte" id="generar">
+            <input class="btn btn-success" type="button" value="Guardar mi reporte" id="guardar">
+            <input class="btn btn-secondary" type="button" value="Ver todos los reportes" id="todos">
+            <input class="btn btn-danger" type="reset" value="Borrar todo" id="vaciar">
+            <input class="btn btn-danger" type="reset" value="Clear DataBase" id="vaciarLocal">
             </section>
         </form>
     </section>
@@ -145,15 +198,21 @@
 
 
 <section id="reporteCompleto">
-    <h4>Mi Reporte</h4>
-    <ul>
-    <li> <p>Nombre y Apellido:</p> <p id="reporteNombre"></p></li>
-    <li> <p>Email:</p> <p id="reporteEmail"></p></li>
-    <li> <p>DNI:</p> <p id="reporteDni"></p> </li>
-    <li> <p>Departamento:</p> <p id="reporteDepto"></p> </li>
-    <li> <p>Monto:</p> <p id="reporteMonto"></p> </li>
-    <li> <p>Cuotas:</p> <p id="reporteCuotas"></p> </li>
-    </ul>
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-header">
+            Mi Reporte
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nombre y Apellido: <span id="reporteNombre"></span></li>
+          <li class="list-group-item">Email: <span id="reporteEmail" ></span></li>
+          <li class="list-group-item">DNI: <span id="reporteDni"></span></li>
+          <li class="list-group-item">Departamento: <span id="reporteDepto"></span></li>
+          <li class="list-group-item">Monto: <span id="reporteMonto"></span></li>
+          <li class="list-group-item">Cuotas: <span id="reporteCuotas"></span></li>
+        </ul>
+    </div>
+
 </section>
 
 <div id="reporteUsingCreate"></div>
@@ -165,6 +224,9 @@
 <!--SweeAlert-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/librerias.js"></script>
+
+<!--Bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
