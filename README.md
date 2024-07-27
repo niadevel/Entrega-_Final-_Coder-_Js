@@ -21,11 +21,11 @@ _A continuación parte de las herramientas y tecnologías utilizadas._
 
 ## 🤓 Muchas gracias por tomarte el tiempo en revisar mi trabajo! 💫
 
-* Comenta a otros sobre este proyecto 📢
+* Comenta a otros sobre este proyecto 👍🏼
 * Nos vemos pronto 🤓
 * ☕️
 
 
 
 ---
-📌 [Sitio Web de SIMULADOR DE PRESTAMOS 1.0 😊
+📌 [Sitio Web de SIMULADOR DE PRESTAMOS 1.0] (https://niadevel.github.io/Entrega-_Final-_Coder-_Js/) ✨
