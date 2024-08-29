@@ -1,6 +1,6 @@
 # SIMULADOR DE PRESTAMOS - Simulador de Prestamos Hipotecarios
 
-_Sitio web que simula un prestamo hipotecario; según el país seleccionado, genera un reporte, este puede ser guardado, realizar una nueva consulta, filtrar por consulta o ver todas las consultas. Se utilizan las librerías de SweeAlert y Toastify._
+_Sitio web que simula un préstamo hipotecario; según el país seleccionado, genera un reporte, este puede ser guardado, realizar una nueva consulta, filtrar por consulta o ver todas las consultas. Se utilizan las librerías de SweetAlert y Toastify._
 
 ## ⚙️ Tecnologías utilizadas 🚀
 
